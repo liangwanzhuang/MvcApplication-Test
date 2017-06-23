@@ -1,0 +1,134 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/css/login-style.css">
+    <link rel="stylesheet" href="~/css/sweetalert.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+</head>
+<body>
+    <div style="text-align: center; clear: both">
+    </div>
+
+    <div class="cotn_principal">
+        <div class="cont_centrar">
+            <div class="cont_login">
+                <div class="cont_info_log_sign_up">
+                    <div class="col_md_login">
+                        <div class="cont_ba_opcitiy">
+                            <h2>LOGIN</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                            <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                        </div>
+                    </div>
+                    <div class="col_md_sign_up">
+                        <div class="cont_ba_opcitiy">
+                            <h2>SIGN UP</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+                            <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont_back_info">
+                    <div class="cont_img_back_grey">
+                        <img src="~/Images/po.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="cont_forms">
+                    <div class="cont_img_back_">
+                        <img src="~/Images/po.jpg" alt="" />
+                    </div>
+                    <div class="cont_form_login">
+                        <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>LOGIN</h2>
+                        <input id="txt_LoginEmail" placeholder="Email" type="email" tabindex="2" required />
+                        <input id="txt_LoginPassword" type="password" placeholder="Password" />
+                        <button class="btn_login" onclick="cambiar_login2()">LOGIN</button>
+                    </div>
+                    <div class="cont_form_sign_up">
+                        <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                        <h2>SIGN UP</h2>
+                        <input  id="sign_up_txtEmail" placeholder="Email" type="email" tabindex="2" required />
+                        <input id="sign_up_txtUserName" type="text" placeholder="User" />
+                        <input id="sign_up_txtPss" type="password" placeholder="Password" />
+                        <input id="sign_up_txtConfirmPss" type="password" placeholder="Confirm Password" />
+                        <button class="btn_sign_up" onclick="dasd()">SIGN UP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/index.js"></script>
+    <script src="~/js/jquery-3.2.1.js"></script>
+    <script src="~/js/sweetalert-dev.js"></script>
+    <script type="text/javascript">
+        function cambiar_login2() {
+            var loginEmail = document.getElementById("txt_LoginEmail").value;
+            var loginPass = document.getElementById("txt_LoginPassword").value;
+            if (loginEmail == null || loginEmail == "") {
+                swal("Oops...", "请输入用户邮箱", "error");
+                return;
+            }
+            if (loginPass == null || loginPass == "") {
+                swal("Oops...", "请输入密码", "error");
+                return;
+            }
+
+
+            $.ajax({
+                url: "/Handler/Login.ashx",
+                type: "POST",
+                dataType: "JSON",
+                data: { "key": "value" },
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    alert($.evalJSON(data))
+                    //var obj = data.value;
+                    //debugger
+                    //for (var i = 0; i < obj.length; i++)
+                    //{
+                    //    var test = obj[i]
+                        
+                        
+                    //}
+                    
+                },
+                error: function (data) {
+                    alert('0000')
+                }
+            });
+        }
+        function dasd()
+        {
+            var sign_up_txtEmail = document.getElementById("sign_up_txtEmail").value;
+            var sign_up_txtUserName = document.getElementById("sign_up_txtUserName").value;
+            var sign_up_txtPss = document.getElementById("sign_up_txtPss").value;
+            var sign_up_txtConfirmPss = document.getElementById("sign_up_txtConfirmPss").value;
+            if (sign_up_txtEmail == null || sign_up_txtEmail == "") {
+                swal("Oops...", "请输入用户邮箱", "error");
+                return;
+            }
+            if (sign_up_txtUserName == null || sign_up_txtUserName == "") {
+                swal("Oops...", "请输入用户名", "error");
+                return;
+            }
+            if (sign_up_txtPss == null || sign_up_txtPss == "") {
+                swal("Oops...", "请输入用户密码", "error");
+                return;
+            }
+            if (sign_up_txtConfirmPss == null || sign_up_txtConfirmPss == "" || sign_up_txtConfirmPss!=sign_up_txtPss) {
+                swal("Oops...", "密码不匹配或没有输入", "error");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
