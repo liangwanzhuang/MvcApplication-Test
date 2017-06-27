@@ -112,12 +112,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateXmlFile.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Handler\Login.ashx.cs">
       <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handler\SignUp.ashx.cs">
+      <DependentUpon>SignUp.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,8 +135,10 @@
     <Content Include="Global.asax" />
     <Content Include="Images\po.jpg" />
     <Content Include="js\index.js" />
+    <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="js\jquery-3.2.1.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\jquery1.8.3.min.js" />
     <Content Include="js\sweetalert-dev.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -146,6 +152,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="xml\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -155,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Handler\Login.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handler\SignUp.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -67,7 +67,7 @@
     </div>
 
     <script src="~/js/index.js"></script>
-    <script src="~/js/jquery-3.2.1.js"></script>
+    <script src="~/js/jquery1.8.3.min.js"></script>
     <script src="~/js/sweetalert-dev.js"></script>
     <script type="text/javascript">
         function cambiar_login2() {
@@ -86,19 +86,16 @@
             $.ajax({
                 url: "/Handler/Login.ashx",
                 type: "POST",
-                dataType: "JSON",
                 data: { "key": "value" },
                 contentType: "application/json; charset=utf-8",
+                dataType: "json",
                 success: function (data) {
-                    alert($.evalJSON(data))
-                    //var obj = data.value;
-                    //debugger
-                    //for (var i = 0; i < obj.length; i++)
-                    //{
-                    //    var test = obj[i]
-                        
-                        
-                    //}
+                    var obj = data[0].status;
+                    if (obj = "1")
+                    {
+                        debugger
+                        swal("Good ", "You clicked  this Login", "success");
+                    }
                     
                 },
                 error: function (data) {
@@ -128,6 +125,25 @@
                 swal("Oops...", "密码不匹配或没有输入", "error");
                 return;
             }
+            $.ajax({
+                url: "/Handler/SignUp.ashx",
+                type: "POST",
+                data: { "key": "value" },
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    var obj = data[0].status;
+                    if (obj = "1")
+                    {
+                        debugger
+                        swal("Good ", "You clicked  this Login", "success");
+                    }
+                    
+                },
+                error: function (data) {
+                    alert('0000')
+                }
+            });
         }
     </script>
 </body>
