@@ -25,7 +25,7 @@ namespace MvcApplication_Test.Handler
             json.Append("}");
             json.Append("]");
             CreateXmlFile createXml = new CreateXmlFile();
-            createXml.LoadXml();
+            createXml.ReadXml();
 
             string returnStr = json.ToString();
             context.Response.Write(returnStr);

@@ -28,6 +28,6 @@ C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\bin\zh-Hans\S
 C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\bin\zh-Hans\System.Web.WebPages.resources.dll
 C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\obj\Debug\MvcApplication-Test.csprojResolveAssemblyReference.cache
 C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\obj\Debug\MvcApplication-Test.dll
 C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\obj\Debug\MvcApplication-Test.pdb
+C:\Users\xgg\Desktop\Liang\MvcApplication-Test\MvcApplication-Test\obj\Debug\MvcApplication-Test.csprojResolveAssemblyReference.cache
