@@ -81,22 +81,24 @@
                 swal("Oops...", "请输入密码", "error");
                 return;
             }
-
-
             $.ajax({
                 url: "/Handler/Login.ashx",
                 type: "POST",
-                data: { "key": "value" },
-                contentType: "application/json; charset=utf-8",
+                data: { "name": loginEmail, "pass": loginEmail },
                 dataType: "json",
                 success: function (data) {
                     var obj = data[0].status;
-                    if (obj = "1")
-                    {
-                        debugger
+                    var erry = data[0].error;
+                    if (obj =="1") {
+                        //debugger
                         swal("Good ", "You clicked  this Login", "success");
+                        window.location.href = "/Dashboard/Index" 
+                        //window.location.href = "/Dashboard/Index？UserName=" + loginEmail
                     }
-                    
+                    else
+                    {
+                        swal("Oops ", erry, "error");
+                    }
                 },
                 error: function (data) {
                     alert('0000')
@@ -125,18 +127,22 @@
                 swal("Oops...", "密码不匹配或没有输入", "error");
                 return;
             }
+            var map = "key=" + sign_up_txtEmail;
             $.ajax({
                 url: "/Handler/SignUp.ashx",
                 type: "POST",
-                data: { "key": "value" },
-                contentType: "application/json; charset=utf-8",
+                data: { "emal": sign_up_txtEmail, "name": sign_up_txtUserName, "pass": sign_up_txtPss },
                 dataType: "json",
                 success: function (data) {
                     var obj = data[0].status;
-                    if (obj = "1")
-                    {
+                    var error = data[0].error;
+                    if (obj == "1") {
                         debugger
                         swal("Good ", "You clicked  this Login", "success");
+                    }
+                    else
+                    {
+                        swal("Oops ", error, "error");
                     }
                     
                 },
