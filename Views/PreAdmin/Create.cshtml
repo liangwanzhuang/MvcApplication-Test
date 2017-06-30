@@ -46,36 +46,34 @@
 </head>
 <body>
 <article class="page-container">
-	
-    <form class="form form-horizontal" id="form-article-add">
+    @*<form class="form form-horizontal" id="form-article-add">*@
         <div class="bor" style="float: left;">
-		<div class="row cl" ">
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">简略标题：</label>
+          <div class="row cl" ">
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">项目名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="articletitle2" name="articletitle2">
-			</div>
+			<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="" name="articletitle2">
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">文章类型：</label>
-			<div class="formControls col-xs-8 col-sm-9" style="width:232px"> <span class="select-box">
-				<select name="articletype" class="select">
-					<option value="0">全部类型</option>
-					<option value="1">帮助说明</option>
-					<option value="2">新闻资讯</option>
-				</select>
-				</span> </div>
 		</div>
-		<div class="row cl" >
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">排序值：</label>
+          <div class="row cl" ">
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">所在城市：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+			<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="" name="articletitle2">
+		</div>
+		</div>
+		  <div class="row cl" >
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">设备数量：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="articlesort" name="articlesort">
 			</div>
 		</div>
-		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">关键词：</label>
-			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="keywords" name="keywords">
-			</div>
+          <div class="row cl">
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">项目缓急：</label>
+			<div class="formControls col-xs-8 col-sm-9" style="width:232px"> <span class="select-box">
+				<select name="articletype" class="select">
+					<option value="0">是</option>
+					<option value="1">否</option>
+				</select>
+				</span> </div>
 		</div>
        @* <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2" style="width: 100px">日期：</label>
@@ -83,62 +81,50 @@
                 <input type="text" onfocus="WdatePicker({ dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'commentdatemax\')||\'%y-%M-%d\'}' })" id="commentdatemin" name="commentdatemin" class="input-text Wdate">
             </div>
         </div>*@
-    </div>
-
-        <div class="bor" style="float: left;">
+       </div>
+     
+        <div class="bor" style="float:left;margin-left:20px;">
 		<div class="row cl" ">
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">简略标题：</label>
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">销售代表：</label>
 			<div class="formControls col-xs-8 col-sm-9">
 				<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="articletitle2" name="articletitle2">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">文章类型：</label>
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">经销商：</label>
 			<div class="formControls col-xs-8 col-sm-9" style="width:232px"> <span class="select-box">
 				<select name="articletype" class="select">
-					<option value="0">全部类型</option>
-					<option value="1">帮助说明</option>
-					<option value="2">新闻资讯</option>
+					<option value="0">否</option>
+					<option value="1">是</option>
 				</select>
 				</span> </div>
 		</div>
 		<div class="row cl" >
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">排序值：</label>
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">代表电话：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="articlesort" name="articlesort">
+				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="" name="articlesort">
 			</div>
 		</div>
 		<div class="row cl">
-			<label class="form-label col-xs-4 col-sm-2" style="width:100px">关键词：</label>
+			<label class="form-label col-xs-4 col-sm-2" style="width:100px">其他：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="keywords" name="keywords">
+				<input type="text" class="input-text" style="width:200px" value="" placeholder=""  name="keywords">
 			</div>
 		</div>
     </div>
-        <div id="InputsWrapper">
-            <div class="bor" id="div1">
-            <a href="#" id="AddMoreFileBox" class="btn btn-info">添加更多的input输入框</a></span></p>  
-            <div>  
-              <div>
-                  <input type="text" class="input-text" style="width:200px"  value=""/>
-                  <input type="text" class="input-text" style="width:200px"  value=""/>
-                  <input type="text" class="input-text" style="width:200px"  value=""/>
-                  <input type="text" class="input-text" style="width:200px"  id="field_2" value=""/>
-                  <a href="#" class="removeclass">×</a>
-              </div>  
-            </div>
+       
+    <div id="divList" style="border: 1px dashed #00ff21;margin-top:20px;float:left; " >
+        <div   id="div1" style="border: 1px dashed #F00; margin:10px" >
+            <input type="text" class="input-text" style="width: 180px;margin:5px" value="" />
+            <input type="text" class="input-text" style="width: 180px;margin:5px" value="" />
+            <input type="text" class="input-text" style="width: 180px;float:none;;margin:5px" value="" />
+            <input type="text" class="input-text" style="width: 180px;margin:5px" id="field_2" value="" />
+            <div style="background-image:url(/images/add.png);width:40px;height:40px;float:left;" onclick="add()"></div>
+@*            <div style="background-image:url(/images/delect.png);width:40px;height:40px;float:right" ></div>*@
         </div>
-        </div>
-        
+    </div>
 
-        <div class="row cl">
-			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
-				<button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
-				<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
-				<button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
-			</div>
-		</div>
-	</form>
+
         
 
 </article>
@@ -319,33 +305,54 @@
 
         var ue = UE.getEditor('editor');
 
-    }); 
-    $(document).ready(function() {  
-  
-    //var MaxInputs       = 8; //maximum input boxes allowed  
-    var InputsWrapper   = $("#InputsWrapper"); //Input boxes wrapper ID  
-    //var AddButton       = $("#AddMoreFileBox"); //Add button ID  
-  
-    //var x = InputsWrapper.length; //initlal text box count  
-    //var FieldCount=1; //to keep track of text box added  
-  
-    $(AddButton).click(function (e)  //on add input button click  
-    {  
+    });
+    $(document).ready(function () {
+
+        //var MaxInputs       = 8; //maximum input boxes allowed  
+        var InputsWrapper = $("#InputsWrapper"); //Input boxes wrapper ID  
+        //var AddButton       = $("#AddMoreFileBox"); //Add button ID  
+
+        //var x = InputsWrapper.length; //initlal text box count  
+        //var FieldCount=1; //to keep track of text box added  
+
+        $(AddButton).click(function (e)  //on add input button click  
+        {
             //add input box  
             $(InputsWrapper).append('<div><input type="text" class="input-text" style="width:200px" name="mytext[]" id="field_' + FieldCount + '" value="Text ' + FieldCount + '"/><a href="#" class="removeclass">×</a></div>');
             x++; //text box increment   
-        return false;  
-    });  
-  
-    $("body").on("click",".removeclass", function(e){ //user click on remove text  
-        if( x > 1 ) {  
-            $(this).parent('div').remove(); //remove text box  
-            x--; //decrement textbox  
-        }  
-        return false;  
-    })   
-  
-});  
+            return false;
+        });
+
+        $("body").on("click", ".removeclass", function (e) { //user click on remove text  
+            if (x > 1) {
+                $(this).parent('div').remove(); //remove text box  
+                x--; //decrement textbox  
+            }
+            return false;
+        })
+
+    });
+    var i =1;
+    function add() {
+        i++;
+        var t = '<div id="div' + i .toString()+ '" style="border: 1px dashed #F00;margin:10px" >' +
+        '<input type="text" class="input-text" style="width: 180px;margin:5px" value="" />' +
+        '<input type="text" class="input-text" style="width: 180px;margin:5px" value="" />' +
+        '<input type="text" class="input-text" style="width: 180px;margin:5px;float:none;" value="" />' +
+        '<input type="text" class="input-text" style="width: 180px;margin:5px" id="field_2" value="" />' +
+            '<div style="background-image:url(/images/add.png);width:40px;height:40px;float:left" onclick="add()"></div>' +
+            '<div style="background-image:url(/images/delect.png);width:40px;height:40px;float:right" onclick="remove(div'+i.toString()+')"></div></div>';
+        $(divList).append(t);
+    }
+    function remove( id) {
+        //debugger
+        //var ss = id.toString();
+        //alert(ss);
+        //var div = document.getElementById(id);
+        //alert(div);
+        //$(bor2).parent('div').removeChild(div); //remove text div 
+        id.parentNode.removeChild(id);
+    }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>

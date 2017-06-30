@@ -362,9 +362,9 @@
     <Content Include="h-ui\h-ui\js\H-ui.js" />
     <Content Include="h-ui\h-ui\js\H-ui.min.js" />
     <Content Include="HtmlPage1.html" />
-    <Content Include="Images\add.png" />
-    <Content Include="Images\delect.png" />
-    <Content Include="Images\po.jpg" />
+    <Content Include="images\add.png" />
+    <Content Include="images\delect.png" />
+    <Content Include="images\po.jpg" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery-3.1.1.min.js" />
     <Content Include="js\jquery-3.2.1.js" />
