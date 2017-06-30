@@ -361,6 +361,9 @@
     <Content Include="h-ui\h-ui\images\verticalTab\tab_bg.png" />
     <Content Include="h-ui\h-ui\js\H-ui.js" />
     <Content Include="h-ui\h-ui\js\H-ui.min.js" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="Images\add.png" />
+    <Content Include="Images\delect.png" />
     <Content Include="Images\po.jpg" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery-3.1.1.min.js" />
@@ -1193,6 +1196,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="h-ui\css\" />
     <Folder Include="Models\" />
+    <Folder Include="NewFolder1\" />
     <Folder Include="xml\" />
   </ItemGroup>
   <ItemGroup>

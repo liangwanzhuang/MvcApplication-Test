@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+    .bor {
+        border: 1px dashed #F00;
+        width: 500px;
+        margin-top: 10px;
+    }
+
+    span {
+        display: block;
+    }
+    /*css注释说明：让span形成块*/
+</style>
+</head>
+<body>
+    
+
+    <a href="#" id="AddMoreFileBox" class="btn btn-info">添加更多的input输入框<span style="background-image:url(/images/add.png)"></span></a>
+    <div id="InputsWrapper">  
+    <div><input type="text" name="mytext[]" id="field_1" value="Text 1"/><a href="#" class="removeclass">×</a></div>  
+    </div>
+
+     <a href="#" id="A1" class="btn btn-info" onclick="add()">添加更多的input输入框</a></span></p>
+    <div id="Div1">
+        <div class="bor" id="div2">
+            <div>
+                    <input type="text" class="input-text" style="width: 200px" value="" />
+                    <input type="text" class="input-text" style="width: 200px" value="" />
+                    <input type="text" class="input-text" style="width: 200px" value="" />
+                    <input type="text" class="input-text" style="width: 200px" id="field_2" value="" />
+                    <a href="#" onclick="remove()">×33</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+    <script>  
+        function add()
+        {
+            var t = '<div class="bor" id="bor2"> <div>' +
+                   '<input type="text" class="input-text" style="width: 200px" value="" />' +
+                   '<input type="text" class="input-text" style="width: 200px" value="" />' +
+                   '<input type="text" class="input-text" style="width: 200px" value="" />' +
+                   '<input type="text" class="input-text" style="width: 200px" id="field_2" value="" />' +
+        '<a href="#" onclick="remove(bor2)">×</a></div></div>';
+            $(Div1).append(t);
+        }
+        function remove(id)
+        {
+           
+            var div = document.getElementById("bor2");
+            //alert();
+            //$(bor2).parent('div').removeChild(div); //remove text div 
+            div.parentNode.removeChild(div);
+        }
+        </script>
+</body>
+</html>
