@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcApplication_Test.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,7 +22,8 @@ namespace MvcApplication_Test.Controllers
         }
         public ActionResult Create()
         {
-            return View();
+            PreAdminCreateModel model = new PreAdminCreateModel();
+            return View(model);
         }
 
     }

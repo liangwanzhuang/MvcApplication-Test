@@ -140,6 +140,7 @@
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\PathFormater.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Models\PreAdminCreateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1195,7 +1196,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="h-ui\css\" />
-    <Folder Include="Models\" />
     <Folder Include="NewFolder1\" />
     <Folder Include="xml\" />
   </ItemGroup>
