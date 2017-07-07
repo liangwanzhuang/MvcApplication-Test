@@ -1,0 +1,27 @@
+﻿@model MvcApplication_Test.Models.PreAdminCreateModel
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm())
+{ 
+    <h2>Index</h2>
+    <div id="divList">
+
+    </div>   
+    <div id="saveButton">
+        <input type="button" style="margin-top: 30px;" class="HazardButton" onclick="save()" />
+    </div>
+}
+<script type="text/javascript" src="~/lib/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    function save() {
+        for (var i = 0; i < 2; i++) {
+@*            var t = '@Html.HiddenFor(x => x.ProjectInfo.Xddw, new { @Value = "1" })' +
+      ' @Html.HiddenFor(x => x.ProjectInfo.PjNum, new { @Value = "2" })' +
+       ' @Html.HiddenFor(x => x.ProjectInfo.Xdd, new { @Value = "3" })' +
+        '@Html.HiddenFor(x => x.ProjectInfo.Xddw, new { @Value = "4" }) ' *@
+            //$(divList).append(t);
+        }
+        $("form").submit();
+    }
+</script>

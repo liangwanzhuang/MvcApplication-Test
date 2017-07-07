@@ -27,19 +27,19 @@ namespace MvcApplication_Test.Handler
                 using (var db = new TestTryEntities())
                 {
                     //数据操作
-                    var getGser = db.Student.Where(x => x.Name == name || x.Email == email).Take(1).ToList();
+                    var getGser = db.User.Where(x => x.Name == name || x.Email == email).Take(1).ToList();
                     if (getGser.Count > 0)
                     {
                         status = "0";
                         error = "该用户名或邮箱已存在，请重试";
                     }
-                    Student user = new Student()
+                    User user = new User()
                     {
                         Name = pass,
                         Email = email,
                         Password = pass
                     };
-                    db.Student.Add(user);
+                    db.User.Add(user);
                     db.SaveChanges();
                     //var user = (from v in db.Student
                     //            where v.Name == "51aspx"

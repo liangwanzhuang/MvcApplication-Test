@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="~/lib/Hui-iconfont/1.0.8/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="~/h-ui/h-ui.admin/skin/default/skin.css" id="skin" />
     <link rel="stylesheet" type="text/css" href="~/h-ui/h-ui.admin/css/style.css" />
-<!--[if IE 6]>
+<!--[if IE 6]> 
 <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
@@ -52,25 +52,25 @@
           <div class="row cl" ">
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">项目名称：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="" name="articletitle2">
+			<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="txt_pjName" name="articletitle2">
 		</div>
 		</div>
           <div class="row cl" ">
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">所在城市：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-			<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="" name="articletitle2">
+			<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="txt_pjCity" name="articletitle2">
 		</div>
 		</div>
 		  <div class="row cl" >
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">设备数量：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="articlesort" name="articlesort">
+				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="txt_mchineNum" name="articlesort">
 			</div>
 		</div>
           <div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">项目缓急：</label>
 			<div class="formControls col-xs-8 col-sm-9" style="width:232px"> <span class="select-box">
-				<select name="articletype" class="select">
+				<select name="articletype" class="select" id="select_IsNow">
 					<option value="0">是</option>
 					<option value="1">否</option>
 				</select>
@@ -88,13 +88,13 @@
 		<div class="row cl" ">
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">销售代表：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="articletitle2" name="articletitle2">
+				<input type="text" class="input-text" style="width:200px" value="" placeholder="" id="txt_PjXSName" name="articletitle2">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">经销商：</label>
 			<div class="formControls col-xs-8 col-sm-9" style="width:232px"> <span class="select-box">
-				<select name="articletype" class="select">
+				<select name="articletype" class="select" id="txt_IsDealer">
 					<option value="0">否</option>
 					<option value="1">是</option>
 				</select>
@@ -103,17 +103,24 @@
 		<div class="row cl" >
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">代表电话：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="" name="articlesort">
+				<input type="text" class="input-text" style="width:200px" value="0" placeholder="" id="txt_phone" name="articlesort">
 			</div>
 		</div>
 		<div class="row cl">
 			<label class="form-label col-xs-4 col-sm-2" style="width:100px">其他：</label>
 			<div class="formControls col-xs-8 col-sm-9">
-				<input type="text" class="input-text" style="width:200px" value="" placeholder=""  name="keywords">
+				<input type="text" class="input-text" style="width:200px" value="" placeholder=""  name="keywords" id="txt_other">
 			</div>
 		</div>
     </div>
-       
+
+       <div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+				<button onClick="Info_save_submit()" class="btn btn-secondary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存并提交审核</button>
+				@*<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>*@
+				@*<button  class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>*@
+			</div>
+		</div>
 
     <div id="divList" style="border: 1px dashed #00ff21;margin-top:20px;float:left; " >
         <div   id="div1" style="border: 1px dashed #F00; margin:10px" >
@@ -155,30 +162,91 @@
         i++;
         var id = "div" + i.toString();
         s.push(id);
-        var t = '<div id="div' + i .toString()+ '" style="border: 1px dashed #F00;margin:10px" >' +
+        var t = '<div id="div' + i.toString() + '" style="border: 1px dashed #F00;margin:10px" >' +
         '<input type="text" class="input-text" style="width: 180px;margin:5px" value="" name="test"/>' +
         '<input type="text" class="input-text" style="width: 180px;margin:5px" value="" name="test"/>' +
         '<input type="text" class="input-text" style="width: 180px;margin:5px;float:none;" value="" name="test" />' +
         '<input type="text" class="input-text" style="width: 180px;margin:5px" id="field_2" value="" name="test" />' +
             '<div style="background-image:url(/images/add.png);width:40px;height:40px;float:left" onclick="add()"></div>' +
-            '<div style="background-image:url(/images/delect.png);width:40px;height:40px;float:right" onclick="remove(div'+i.toString()+')"></div></div>';
+            '<div style="background-image:url(/images/delect.png);width:40px;height:40px;float:right" onclick="remove(div' + i.toString() + ')"></div></div>';
         $(divList).append(t);
     }
     function remove(id) {
         id.parentNode.removeChild(id);
     }
-    @Model.ProjectInfo
-
     function article_save_submit() {
-        //alert(dd.toString());
+
+        var jsonstr = "["
+        var a = [];
         for (var i = 0; i < s.length; i++) {
-            var divname = "#" + s[i]+"  input[type='text']";
-            //alert(divname)
+            var divname = "#" + s[i] + "  input[type='text']";
+            var x = 1;
+            //jsonstr += '}'
+            //jsonstr += '{';
             $(divname).each(function () {
-                alert($(this).val())
+                if (x == 1) {
+                    jsonstr += "'Name':'" + $(this).val() + "',";
+                    a.push(['c', $(this).val()])
+                }
+                if (x == 2) {
+                    jsonstr += "'Name2':'" + $(this).val() + "',";
+                    a.push(['c', $(this).val()])
+                }
+                if (x == 3) {
+                    jsonstr += "'Name3':'" + $(this).val() + "',";
+                    a.push(['c', $(this).val()])
+                }
+                if (x == 4) {
+                    jsonstr += "'Name4':'" + $(this).val() + "'";
+                    a.push(['c', $(this).val()])
+                }
+                x++;
+            });
+
+            jsonstr += '}'
+            //x++;
+            //$(divname).each(function () {
+            //    alert($(this).val())
+            //});
+        }
+        //jsonstr += "]";
+        ////a = { a: 'f', b: 'f' }
+        //var a = [[1, 2], ['a', 'b']];
+        //a.push(['c', 's'])
+        jsonstr = JSON.stringify(a);
+        //alert(jsonstr)
+
+        var url = '@Url.Action("InserMachineInfo", "PreAdmin")';
+        $.post(url, { jsonstr: jsonstr },
+         function (istrue) {
+         });
+    }
+
+
+    function Info_save_submit() {
+        var Pname = document.getElementById("txt_pjName").value;
+        var PjCity = document.getElementById("txt_pjCity").value;
+        var MachineNum = document.getElementById("txt_mchineNum").value;
+        var IsNow = document.getElementById("select_IsNow").value;
+        var PjXSName = document.getElementById("txt_PjXSName").value;
+        var IsDealer = document.getElementById("txt_IsDealer").value;
+        var Phone = document.getElementById("txt_phone").value;
+        var Other = document.getElementById("txt_other").value;
+        debugger
+        var url = '@Url.Action("InserProject", "PreAdmin")';
+        $.post(url, { Pname: Pname, PjCity: PjCity, MachineNum: MachineNum, IsNow: IsNow, PjXSName: PjXSName, IsDealer: IsDealer, Phone: Phone, Other: Other },
+            function (istrue) {
+                if (istrue) {
+                    @*var pageIndex =@Request.QueryString["pageIndex"];
+                            RefreshView(pageIndex);*@
+                    alert(url)
+                }
+                else {
+                    debugger
+                    alert(455)
+                }
             });
         }
-    }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
 </body>

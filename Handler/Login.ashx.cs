@@ -25,7 +25,7 @@ namespace MvcApplication_Test
             {
                 using (var db = new TestTryEntities())
                 {
-                    var user = db.Student.Where(x => x.Name == name && x.Password == pass).Take(1).ToList();
+                    var user = db.User.Where(x => x.Name == name && x.Password == pass).Take(1).ToList();
                     if (user.Count == 0)
                     {
                         status = "0";
